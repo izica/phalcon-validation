@@ -1,0 +1,34 @@
+{
+    "name": "izica/phalcon-validation",
+    "description": "Handy interface for Phalcon Validation",
+    "authors": [
+        {
+            "name": "Golovarchuk Artyom",
+            "email": "artemiztomska@gmail.com"
+        }
+    ],
+    "keywords": [
+        "validation",
+        "validator",
+        "validate",
+        "validation-library",
+        "validations",
+        "validators",
+        "phalcon",
+        "phalcon-php",
+        "phalcon-framework",
+        "interface",
+        "php",
+        "php7",
+        "phalcon-php-framework"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "Validation.php"
+        ]
+    }
+}
