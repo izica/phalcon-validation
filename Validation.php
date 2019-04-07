@@ -4,18 +4,31 @@ namespace Izica;
 
 use Phalcon\Validation as PhalconValidation;
 use Phalcon\Validation\Validator\Email;
+use Phalcon\Validation\Validator\StringLength;
+use Phalcon\Validation\Validator\Between;
+use Phalcon\Validation\Validator\File;
+use Phalcon\Validation\Validator\UniquenessValidator;
+use Phalcon\Validation\Validator\Callback;
 use Phalcon\Validation\Validator\PresenceOf;
 use Phalcon\Validation\Validator\Numericality;
+use Phalcon\Validation\Validator\Url;
+use Phalcon\Validation\Validator\Date;
+use Phalcon\Validation\Validator\Regex;
 
 class Validation {
-    private static $sTypeRequired = 'required';
-    private static $sTypeNumeric = 'numeric';
-    private static $sTypeEmail = 'email';
     private $arOptions = [];
     public static $arValidators = [
         'required' => PresenceOf::class,
         'numeric' => Numericality::class,
         'email' => Email::class,
+        'unique' => UniquenessValidator::class,
+        'callback' => Callback::class,
+        'length' => StringLength::class,
+        'between' => Between::class,
+        'file' => File::class,
+        'url' => Url::class,
+        'date' => Date::class,
+        'regex' => Regex::class,
     ];
 
     function __construct($arOptions) {
@@ -57,7 +70,7 @@ class Validation {
         ]
     ) {
         return [
-            'type' => self::$sTypeRequired,
+            'type' => 'required',
             'options' => $arOptions
         ];
     }
@@ -68,7 +81,18 @@ class Validation {
         ]
     ) {
         return [
-            'type' => self::$sTypeNumeric,
+            'type' => 'numeric',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function url(
+        $arOptions = [
+            'message' => ':field must be a url'
+        ]
+    ) {
+        return [
+            'type' => 'url',
             'options' => $arOptions
         ];
     }
@@ -79,7 +103,56 @@ class Validation {
         ]
     ) {
         return [
-            'type' => self::$sTypeEmail,
+            'type' => 'email',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function unique($arOptions) {
+        return [
+            'type' => 'unique',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function callback($arOptions) {
+        return [
+            'type' => 'callback',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function length($arOptions) {
+        return [
+            'type' => 'length',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function file($arOptions) {
+        return [
+            'type' => 'file',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function between($arOptions) {
+        return [
+            'type' => 'between',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function date($arOptions) {
+        return [
+            'type' => 'date',
+            'options' => $arOptions
+        ];
+    }
+
+    public static function regex($arOptions) {
+        return [
+            'type' => 'regex',
             'options' => $arOptions
         ];
     }
