@@ -25,7 +25,7 @@ Izica\Validation
 
 ### Notice
 [https://docs.phalconphp.com/3.4/en/api/phalcon_validation_validator_numericality]
-$arOptions which passed in static functions, for example statice numeric($arOptions),
+$arOptions which passed in static functions, for example static numeric($arOptions),
 used as params for new Numericality($arOptions);
 
 You can use it like this
