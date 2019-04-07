@@ -29,7 +29,7 @@ class Validation {
         return false;
     }
 
-    public function validate($arData, $bKeys = true) {
+    public function validate($arData) {
         $obValidation = new PhalconValidation();
         foreach ($this->arOptions as $sField => $arFieldOptions) {
             foreach ($arFieldOptions as $arFieldOption) {
@@ -41,16 +41,14 @@ class Validation {
         }
         $obMessages = $obValidation->validate($arData);
         $arMessages = [];
-        if ($bKeys) {
-            foreach ($obMessages as $obMessage) {
-                $arMessages[$obMessage->getField()][$obMessage->getType()] = $obMessage->getMessage();
-            }
-        }else{
-            foreach ($obMessages as $obMessage) {
-                $arMessages[] = $obMessage->getMessage();
-            }
+
+        foreach ($obMessages as $obMessage) {
+            $arMessages[] = [
+                'field' => $obMessage->getField(),
+                'type' => $obMessage->getType(),
+                'message' => $obMessage->getMessage(),
+            ];
         }
-        return $arMessages;
     }
 
     public static function required(
