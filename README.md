@@ -11,13 +11,25 @@ composer require izica/phalcon-validation
 Izica\Validation
 * __construct($arOptions)  // example below
 * validate($arData)
-* static required
-* static numeric
-* static email
+* static required($arOptions) //Phalcon\Validation\Validator\PresenceOf
+* static numeric($arOptions) //Phalcon\Validation\Validator\Numericality
+* static email($arOptions) //Phalcon\Validation\Validator\Email
 * TODO ----
 * length
 * callback
 * etc
+
+### Notice
+[https://docs.phalconphp.com/3.4/en/api/phalcon_validation_validator_numericality]
+$arOptions which passed in static functions, for example statice numeric($arOptions),
+used as params for new Numericality($arOptions);
+
+You can use it like this
+```
+$validation = new Validation([
+    'num' => [Validation::numeric(['message' => ':field is not numeric')],
+]);
+```
 
 ### Usage
 ```php
