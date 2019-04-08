@@ -31,6 +31,20 @@ class Validation {
         'regex' => Regex::class,
     ];
 
+	public static $arTypes = [
+		'PresenceOf'          => 'required',
+		'Numericality'        => 'numeric',
+		'Email'               => 'email',
+		'UniquenessValidator' => 'unique',
+		'Callback'            => 'callback',
+		'StringLength'        => 'length',
+		'Between'             => 'between',
+		'File'                => 'file',
+		'Url'                 => 'url',
+		'Date'                => 'date',
+		'Regex'               => 'regex',
+	];
+
     function __construct($arOptions) {
         $this->arOptions = $arOptions;
     }
@@ -58,10 +72,11 @@ class Validation {
         foreach ($obMessages as $obMessage) {
             $arMessages[] = [
                 'field' => $obMessage->getField(),
-                'type' => $obMessage->getType(),
+                'type' => self::$arTypes[$obMessage->getType()],
                 'message' => $obMessage->getMessage(),
             ];
         }
+        return $arMessages;
     }
 
     public static function required(

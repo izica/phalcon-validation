@@ -25,8 +25,8 @@ Izica\Validation
 
 ### Notice
 [https://docs.phalconphp.com/3.4/en/api/phalcon_validation_validator_numericality]
-$arOptions which passed in static functions, for example static numeric($arOptions),
-used as params for new Numericality($arOptions);
+`$arOptions` which passed in static functions, for example `static numeric($arOptions)`,
+used as params for `new Numericality($arOptions)`;
 
 You can use it like this
 ```
@@ -67,25 +67,28 @@ Array
 (
     [0] => Array
         (
-            [type] => Email
-            [message] => email is not valid
             [field] => email
+            [type] => email
+            [message] => email is not valid
         )
 
     [1] => Array
         (
-            [type] => PresenceOf
-            [message] => num is required
             [field] => num
+            [type] => required
+            [message] => num is required
         )
 
     [2] => Array
         (
-            [type] => Numericality
-            [message] => num is not numeric
             [field] => num
+            [type] => numeric
+            [message] => num is not numeric
         )
+
 )
+
+
 
 ```
 
