@@ -67,21 +67,21 @@ Array
 (
     [0] => Array
         (
-            [type] => email
+            [type] => Email
             [message] => email is not valid
             [field] => email
         )
 
     [1] => Array
         (
-            [type] => num
+            [type] => PresenceOf
             [message] => num is required
             [field] => num
         )
 
     [2] => Array
         (
-            [type] => num
+            [type] => Numericality
             [message] => num is not numeric
             [field] => num
         )
