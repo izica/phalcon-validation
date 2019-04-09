@@ -9,19 +9,19 @@ composer require izica/phalcon-validation
 
 ### Api
 Izica\Validation
-* __construct($arOptions)  // example below
-* validate($arData)
-* static required($arOptions: optional) //Phalcon\Validation\Validator\PresenceOf
-* static numeric($arOptions: optional) //Phalcon\Validation\Validator\Numericality
-* static email($arOptions: optional) //Phalcon\Validation\Validator\Email
-* static url($arOptions: optional) //Phalcon\Validation\Validator\Url
-* static callback($arOptions) //Phalcon\Validation\Validator\Callback
-* static length($arOptions) //Phalcon\Validation\Validator\StringLength
-* static unique($arOptions) //Phalcon\Validation\Validator\UniquenessValidator
-* static between($arOptions) //Phalcon\Validation\Validator\Between
-* static file($arOptions) //Phalcon\Validation\Validator\File
-* static date($arOptions) //Phalcon\Validation\Validator\Date
-* static regex($arOptions) //Phalcon\Validation\Validator\Regex
+* `__construct($arOptions)`  -- example below
+* `validate($arData)`
+* `static required($arOptions: optional)` -- Phalcon\Validation\Validator\PresenceOf
+* `static numeric($arOptions: optional)` -- Phalcon\Validation\Validator\Numericality
+* `static email($arOptions: optional)` -- Phalcon\Validation\Validator\Email
+* `static url($arOptions: optional)` -- Phalcon\Validation\Validator\Url
+* `static callback($arOptions)` -- Phalcon\Validation\Validator\Callback
+* `static length($arOptions)` -- Phalcon\Validation\Validator\StringLength
+* `static unique($arOptions)` -- Phalcon\Validation\Validator\UniquenessValidator
+* `static between($arOptions)` -- Phalcon\Validation\Validator\Between
+* `static file($arOptions)` -- Phalcon\Validation\Validator\File
+* `static date($arOptions)` -- Phalcon\Validation\Validator\Date
+* `static regex($arOptions)` -- Phalcon\Validation\Validator\Regex
 
 ### Notice
 [https://docs.phalconphp.com/3.4/en/api/phalcon_validation_validator_numericality]
