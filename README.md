@@ -55,7 +55,7 @@ class ExampleController extends Controller {
 }
 ```
 
-```
+```php
 
 /*
     $_POST = [
