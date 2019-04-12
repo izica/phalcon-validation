@@ -56,13 +56,16 @@ class ExampleController extends Controller {
 ```
 
 ```
+
+/*
+    $_POST = [
+        'email' => 'qwe'
+    ];
+*/
 $arMessages = $validation->validate($_POST);
 
-Request
-email: qwe
-num: 
-
-Response: 
+/* 
+$arMessages
 Array
 (
     [0] => Array
@@ -87,8 +90,7 @@ Array
         )
 
 )
-
-
+*/
 
 ```
 
