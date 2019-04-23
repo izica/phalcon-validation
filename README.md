@@ -1,6 +1,6 @@
 # Phalcon validation
 
-Handy interface for Phalcon\Validation
+Usefull tool for Phalcon\Validation for easist way to validate
 
 ### Installation
 ```
