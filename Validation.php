@@ -49,6 +49,11 @@ class Validation {
         $this->arOptions = $arOptions;
     }
 
+    public static function make($arData, $arOptions){
+        $obValidate = new Validation($arOptions);
+        return $obValidate->validate($arData);
+    }
+
     private static function getValidator($sName, $arOptions) {
         if (self::$arValidators[$sName]) {
             return new self::$arValidators[$sName]($arOptions);
