@@ -52,8 +52,20 @@ class ExampleController extends Controller {
         }
         // validation success
     }
+    // or short
+    public function indexAction() {
+        $arMessages = Validation::make($_POST, [
+            'email' => [Validation::required(), Validation::email()],
+            'num' => [Validation::required(), Validation::numeric()],
+        ]);
+        if ($arMessages) {
+            // validation error
+        }
+        // validation success
+    }
 }
 ```
+
 
 ```php
 
