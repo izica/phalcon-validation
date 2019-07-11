@@ -11,6 +11,9 @@ composer require izica/phalcon-validation
 Izica\Validation
 * `__construct($arOptions)`  -- example below
 * `validate($arData)`
+* `static make($arData, $arOptions)`
+
+Izica\ValidationRule
 * `static required($arOptions: optional)` -- Phalcon\Validation\Validator\PresenceOf
 * `static numeric($arOptions: optional)` -- Phalcon\Validation\Validator\Numericality
 * `static email($arOptions: optional)` -- Phalcon\Validation\Validator\Email
@@ -38,13 +41,14 @@ $validation = new Validation([
 ### Usage
 ```php
 use Izica\Validation;
+use Izica\ValidationRule;
 use Phalcon\Mvc\Controller;
 
 class ExampleController extends Controller {
     public function indexAction() {
         $validation = new Validation([
-            'email' => [Validation::required(), Validation::email()],
-            'num' => [Validation::required(), Validation::numeric()],
+            'email' => [ValidationRule::required(), ValidationRule::email()],
+            'num' => [ValidationRule::required(), ValidationRule::numeric()],
         ]);
         $arMessages = $validation->validate($_POST);
         if ($arMessages) {
@@ -55,8 +59,8 @@ class ExampleController extends Controller {
     // or short
     public function indexAction() {
         $arMessages = Validation::make($_POST, [
-            'email' => [Validation::required(), Validation::email()],
-            'num' => [Validation::required(), Validation::numeric()],
+            'email' => [ValidationRule::required(), ValidationRule::email()],
+            'num' => [ValidationRule::required(), ValidationRule::numeric()],
         ]);
         if ($arMessages) {
             // validation error

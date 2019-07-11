@@ -16,6 +16,7 @@
         "validators",
         "phalcon",
         "phalcon-php",
+        "phalcon-validation",
         "phalcon-framework",
         "interface",
         "php",
@@ -28,7 +29,8 @@
     },
     "autoload": {
         "classmap": [
-            "Validation.php"
+            "Validation.php",
+            "ValidationRule.php"
         ]
     }
 }
