@@ -34,7 +34,7 @@ used as params for `new Numericality($arOptions)`;
 You can use it like this
 ```
 $validation = new Validation([
-    'num' => [Validation::numeric(['message' => ':field is not numeric')],
+    'num' => [ValidationRule::numeric(['message' => ':field is not numeric')],
 ]);
 ```
 
