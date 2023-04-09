@@ -1,12 +1,6 @@
 {
     "name": "izica/phalcon-validation",
     "description": "Handy interface for Phalcon Validation",
-    "authors": [
-        {
-            "name": "Golovarchuk Artyom",
-            "email": "artemiztomska@gmail.com"
-        }
-    ],
     "keywords": [
         "validation",
         "validator",
